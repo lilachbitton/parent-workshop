@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>סדנת הנחיית הורים - הרבנית טובה</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffd7d9;
+            --secondary-color: #fff5f5;
+            --accent-color: #ff8c94;
+            --text-color: #4a4a4a;
+            --light-bg: #fff9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        body {
+            background: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 20px;
+            margin: 20px auto;
+            box-shadow: 0 10px 30px rgba(255,140,148,0.1);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .header-image-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        .hero-description {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+            padding: 0 10px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(255,140,148,0.05);
+            width: 100%;
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .section-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255,140,148,0.1);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .detail-card {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card i {
+            font-size: 2em;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .meetings-list {
+            list-style: none;
+            width: 100%;
+        }
+
+        .meeting-item {
+            background: var(--light-bg);
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .meeting-icon {
+            font-size: 2em;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(255,140,148,0.1);
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,140,148,0.2);
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 95%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-image {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+                margin: 10px 0;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .hero-description {
+                font-size: 1.1em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .section {
+                padding: 20px 15px;
+                margin: 10px 0;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .meeting-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .meeting-icon {
+                margin-bottom: 10px;
+            }
+
+            .submit-button {
+                width: 100%;
+                padding: 12px 20px;
+            }
+
+            .contact-form {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            .detail-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header data-aos="fade-down">
+            <h1>הצטרפו לסדרת שיעורי הנחיית הורים עם הרבנית טובה</h1>
+            <p class="hero-description">
+                למדו כלים מעשיים שיכולים לשנות את האווירה בבית וליצור קשרים עמוקים יותר עם הילדים.
+            </p>
+            <div class="header-image-container">
+                <img src="https://i.ibb.co/mGSN7NS/amily.webp" alt="משפחה מאושרת" class="header-image">
+            </div>
+        </header>
+
+        <section class="section" data-aos="fade-up">
+            <h2>סדרת 5 מפגשים לאמהות שרוצות יותר</h2>
+            <p>בסדנה ייחודית זו, נעמיק ונלמד כלים פרקטיים לשיפור התקשורת בבית ולחיזוק הקשר עם הילדים. נלמד טכניקות ייחודיות להתמודדות עם אתגרים יום-יומיים במשפחה.</p>
+            
+            <div class="details-grid">
+                <div class="detail-card" data-aos="fade-up">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>מתי?</h3>
+                    <p>ימי רביעי, פעם בשבוע</p>
+                </div>
+                <div class="detail-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-clock"></i>
+                    <h3>משך כל מפגש</h3>
+                    <p>שעתיים מלאות</p>
+                </div>
+                <div class="detail-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-shekel-sign"></i>
+                    <h3>עלות סמלית</h3>
+                    <p>200 ₪ בלבד לכל 5 המפגשים</p>
+                </div>
+                <div class="detail-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-users"></i>
+                    <h3>למי זה מתאים?</h3>
+                    <p>לאמהות לילדים בכל הגילאים</p>
+                </div>
+            </div>
+        </section>
+<div class="image-section" data-aos="fade-up">
+            <img src="https://i.ibb.co/mGSN7NS/amily.webp" alt="הורים וילדים מאושרים" class="section-image">
+        </div>
+
+        <section class="section" data-aos="fade-up">
+            <h2>מה כוללים המפגשים?</h2>
+            <ul class="meetings-list">
+                <li class="meeting-item" data-aos="fade-right">
+                    <i class="fas fa-heart meeting-icon"></i>
+                    <div>
+                        <h3>תקשורת מקרבת ומעצימה</h3>
+                        <p>למדי כיצד לדבר עם הילדים כך שיבינו אותך ויתחברו לרגשותיך.</p>
+                    </div>
+                </li>
+                <li class="meeting-item" data-aos="fade-right" data-aos-delay="100">
+                    <i class="fas fa-brain meeting-icon"></i>
+                    <div>
+                        <h3>ניהול רגשות ומתן מענה לאתגרים</h3>
+                        <p>כלים מעשיים לניהול כעסים, פתרון קונפליקטים והתמודדות עם מצבי לחץ בבית.</p>
+                    </div>
+                </li>
+                <li class="meeting-item" data-aos="fade-right" data-aos-delay="200">
+                    <i class="fas fa-home meeting-icon"></i>
+                    <div>
+                        <h3>עקרונות חינוכיים לחיי משפחה מאושרים</h3>
+                        <p>בניית תשתית ערכית חזקה לחיים משותפים המבוססים על כבוד והערכה הדדית.</p>
+                    </div>
+                </li>
+                <li class="meeting-item" data-aos="fade-right" data-aos-delay="300">
+                    <i class="fas fa-star meeting-icon"></i>
+                    <div>
+                        <h3>חיזוק הביטחון העצמי של הילדים</h3>
+                        <p>הבנת השפעתך כאמא על עיצוב דמות הילדים שלך ודרכים לחזק את ביטחונם העצמי.</p>
+                    </div>
+                </li>
+                <li class="meeting-item" data-aos="fade-right" data-aos-delay="400">
+                    <i class="fas fa-seedling meeting-icon"></i>
+                    <div>
+                        <h3>כלים מעשיים ליצירת סביבת משפחה בריאה</h3>
+                        <p>יצירת סביבה רגועה ומטפחת שבה כל בני המשפחה יוכלו לשגשג.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2>למה לבחור בסדנה?</h2>
+            <div class="details-grid">
+                <div class="detail-card" data-aos="fade-up">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>הדרכה מקצועית עם נשמה גדולה</h3>
+                    <p>בסדנה המעמיקה תלמדי שיטות המשלבות אהבה ואחריות.</p>
+                </div>
+                <div class="detail-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>תוצאות מוכחות</h3>
+                    <p>המשתתפים בסדנאות הקודמות מעידים על שינוי משמעותי בבית.</p>
+                </div>
+                <div class="detail-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-gift"></i>
+                    <h3>ערך עצום במחיר סמלי</h3>
+                    <p>200 ₪ בלבד להשקעה שתשנה את חיי המשפחה שלכם.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" data-aos="zoom-in">
+            <h2>הצטרפי עכשיו והתחילי את המסע לשינוי חיובי בבית</h2>
+            <p>אל תפספסי את ההזדמנות להתחיל שינוי אמיתי. הירשמי עכשיו, ושפרי את חיי המשפחה שלך בצורה שלא תיאמן!</p>
+            
+            <div class="contact-form">
+                <h3>השאירי פרטים ושרייני את מקומך</h3>
+                <form id="registrationForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">שם מלא</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">טלפון</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">אימייל</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">הערות נוספות</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">שליחה</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            disable: window.innerWidth < 768
+        });
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            const submitButton = event.target.querySelector('.submit-button');
+            const originalText = submitButton.textContent;
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'שולח...';
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                const webhookUrl = 'https://hook.eu2.make.com/6e13mnwndnxr38139b82j63iuyb4re0g';
+                
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('תודה! פרטיך נקלטו בהצלחה. ניצור איתך קשר בהקדם.');
+                    document.getElementById('registrationForm').reset();
+                } else {
+                    throw new Error('שגיאה בשליחת הטופס');
+                }
+            } catch (error) {
+                alert('מצטערים, הייתה שגיאה בשליחת הטופס. אנא נסו שוב מאוחר יותר.');
+                console.error('Error:', error);
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            }
+        }
+    </script>
+</body>
+</html>
